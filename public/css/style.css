@@ -1,0 +1,81 @@
+body {
+    background-color: #000B0D;
+    color: #ffffff;
+  }
+  .navbar {
+    background-color: #154B52 !important;
+  }
+  .navbar-brand, .nav-link {
+    color: #ffffff !important;
+  }
+  .nav-link:hover {
+    color: #1C8394 !important;
+  }
+  .btn-primary {
+    background-color: #1C8394;
+    border-color: #1C8394;
+  }
+  .btn-primary:hover {
+    background-color: #154B52;
+    border-color: #154B52;
+  }
+  .card {
+    background-color: #154B52;
+    color: #ffffff;
+    margin: 10px;
+  }
+  .card img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+  .footer {
+    background-color: #154B52;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+    position: bottom;
+    bottom: 0;
+    width: 100%;
+  }
+  /*css registrar*/
+  .register-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #154B52;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .form-control {
+    background-color: #1C8394;
+    border: none;
+    color: #ffffff;
+  }
+  .form-control:focus {
+    background-color: #1C8394;
+    border-color: #1C8394;
+    box-shadow: none;
+    color: #ffffff;
+  }
+  .form-control::placeholder {
+    color: #cccccc;
+  }
+
+  /*login css*/
+  .login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #154B52;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
