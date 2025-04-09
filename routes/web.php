@@ -20,3 +20,4 @@ Route::get('/registrar', [App\Http\Controllers\Registrar::class, 'registrar'])->
 Route::get('/usuario', [App\Http\Controllers\Usuario::class, 'usuario'])->name('usuario');
 Route::get('/login', [App\Http\Controllers\Login::class, 'login'])->name('login');
 
+Route::get('/veiculo', [App\Http\Controllers\Veiculo::class, 'veiculo'])->name('veiculo');
