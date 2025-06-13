@@ -13,7 +13,7 @@
 
     @yield('conteudo')
 
-    <footer class="footer">
+    <footer class="footer fixed-bottom">
       <p>&copy; 2023 AdoçãoPets. Todos os direitos reservados.</p>
     </footer>
 
