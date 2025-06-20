@@ -10,7 +10,7 @@
     <label for="modelo">Modelo</label>
     <input type="text" name="modelo" id="modelo" value={{ $veiculo-> modelo ?? old('modelo') }}>
 
-    <label for="ano">ano</label>
+    <label for="ano">Ano</label>
     <input type="text" name="ano" id="ano" value={{ $veiculo-> ano ?? old('ano') }}>
 
     <label for="placa">Placa</label>
