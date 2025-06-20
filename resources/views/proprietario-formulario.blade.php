@@ -1,19 +1,20 @@
-<form action="" method="post">
+<form action="{{ route('proprietario-store') }}" method="POST">
     @csrf
-    <label for="marca">Marca</label>
-    <input type="text" name="marca" id="marca">
 
-    <label for="modelo">Modelo</label>
-    <input type="text" name="modelo" id="modelo">
+    {{-- Essa linha irá recuperar o ID e deixar invisível --}}
+    <input type="hidden" name="id" value={{ $proprietario->id ?? old('id') }}>
+    
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" value={{ $proprietario-> nome ?? old('nome') }}>
 
-    <label for="ano">ano</label>
-    <input type="text" name="ano" id="ano">
+    <label for="cpf">CPF</label>
+    <input type="text" name="cpf" id="cpf" value={{ $proprietario-> cpf ?? old('cpf') }}>
 
-    <label for="placa">Placa</label>
-    <input type="text" name="placa" id="placa">
+    <label for="telefone">Telefone</label>
+    <input type="text" name="telefone" id="telefone" value={{ $proprietario-> telefone ?? old('telefone') }}>
 
-    <label for="cor">Cor</label>
-    <input type="text" name="cor" id="cor">
+    <label for="email">E-mail</label>
+    <input type="text" name="email" id="email" value={{ $proprietario-> email ?? old('email') }}>
 
     <button type="submit">Cadastrar</button>
 </form>
