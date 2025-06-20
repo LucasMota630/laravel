@@ -8,26 +8,24 @@
     <thead>
         <tr>
             <th>Código</th>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Ano</th>
-            <th>Placa</th>
-            <th>Cor</th>
+            <th>Titulo</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Data de Publicação</th>
             <th>Ações</th>
         </tr>
     </thead>
     <tbody>
-				@foreach ($veiculos as $veiculo)
+				@foreach ($anuncios as $anuncio)
             <tr>
-				<td>{{ $veiculo->id }}</td>
-                <td>{{ $veiculo->marca }}</td>
-                <td>{{ $veiculo->modelo }}</td>
-                <td>{{ $veiculo->ano }}</td>                
-	            <td>{{ $veiculo->placa }}</td>                
-                <td>{{ $veiculo->cor }}</td>                
+				<td>{{ $anuncio->id }}</td>
+                <td>{{ $anuncio->titulo }}</td>
+                <td>{{ $anuncio->descricao }}</td>
+                <td>{{ $anuncio->preco }}</td>                
+	            <td>{{ $anuncio->data_publicacao }}</td>              
                 <td>
-                    <a href="/veiculo/remove/{{ $veiculo->id }}">Excluir</a>
-                    <a href="{{ route('veiculo-editar', $veiculo->id) }}">Atualizar</a>
+                    <a href="/anuncio/remove/{{ $anuncio->id }}">Excluir</a>
+                    <a href="{{ route('anuncio-editar', $anuncio->id) }}">Atualizar</a>
                 </td>
             </tr>
         @endforeach

@@ -1,23 +1,20 @@
-<form action="{{ route('veiculo-store') }}" method="POST">
+<form action="{{ route('anuncio-store') }}" method="POST">
     @csrf
 
     {{-- Essa linha irá recuperar o ID e deixar invisível --}}
-    <input type="hidden" name="id" value={{ $veiculo->id ?? old('id') }}>
+    <input type="hidden" name="id" value={{ $anuncio->id ?? old('id') }}>
     
-    <label for="marca">Marca</label>
-    <input type="text" name="marca" id="marca" value={{ $veiculo-> marca ?? old('marca') }}>
+    <label for="titulo">Titulo</label>
+    <input type="text" name="titulo" id="titulo" value={{ $anuncio-> titulo ?? old('titulo') }}>
 
-    <label for="modelo">Modelo</label>
-    <input type="text" name="modelo" id="modelo" value={{ $veiculo-> modelo ?? old('modelo') }}>
+    <label for="descricao">Descrição</label>
+    <input type="text" name="descricao" id="descricao" value={{ $anuncio-> descricao ?? old('descricao') }}>
 
-    <label for="ano">ano</label>
-    <input type="text" name="ano" id="ano" value={{ $veiculo-> ano ?? old('ano') }}>
+    <label for="preco">Preço</label>
+    <input type="text" name="preco" id="preco" value={{ $anuncio-> preco ?? old('preco') }}>
 
-    <label for="placa">Placa</label>
-    <input type="text" name="placa" id="placa" value={{ $veiculo-> placa ?? old('placa') }}>
-
-    <label for="cor">Cor</label>
-    <input type="text" name="cor" id="cor" value={{ $veiculo-> cor ?? old('cor') }}>
+    <label for="data_publicacao">Data de Publicação</label>
+    <input type="text" name="data_publicacao" id="data_publicacao" value={{ $anuncio-> data_publicacao ?? old('data_publicacao') }}>
 
     <button type="submit">Cadastrar</button>
 </form>

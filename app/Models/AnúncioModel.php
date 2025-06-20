@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AnúncioModel extends Model
 {
     use HasFactory;
+    protected $table = 'anuncio';
+
+    protected $fillable = ['id', 'titulo', 'descricao', 'preco', 'data_publicacao', 'id_proprietario', 'id_veiculo'];
 }
