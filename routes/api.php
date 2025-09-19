@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    Route::post('/usuario/foto-upload', [UsuarioController::class, 'fotoUpload']);
 });
 
 Route::prefix('usuario')->group(function(){
@@ -25,5 +26,7 @@ Route::prefix('usuario')->group(function(){
     Route::post('desativar-conta', [App\Http\Controllers\UsuarioController::class, 'desativarConta']);
     Route::post('foto-upload', [App\Http\Controllers\UsuarioController::class, 'fotoUpload']);
     Route::post('editar', [App\Http\Controllers\UsuarioController::class, 'editar']);
-    Route::post('perfil', [App\Http\Controllers\UsuarioController::class, 'perfil']);
+    Route::get('perfil', [App\Http\Controllers\UsuarioController::class, 'perfil']);
 });
+
+    Route::post('/usuario/foto-upload', [UsuarioController::class, 'fotoUpload']);

@@ -64,23 +64,29 @@ class UsuarioController extends Controller
     }
 
 
-    function fotoUpload(Request $request)
-    {
-        $request->validate([
-            'picture' => 'required|image|mimes:jpg,jpeg,png|max:2048'
-        ]);
+public function fotoUpload(Request $request)
+{
+    $request->validate([
+        'foto' => 'required|image|max:5120', // aceita até 5MB
+    ]);
 
-        $usuario = $request->user();
-        $path = $request->file('picture')->store('pictures', 'public');
+    $usuario = User::find(auth()->id());
 
-        $usuario->update(['picture' => $path]);
-
-        return response()->json([
-            'message' => 'Foto enviada com sucesso.',
-            'picture_url' => asset('storage/' . $path)
-        ]);
+     if (!$usuario) {
+        return response()->json(['erro' => 'Usuário não encontrado'], 404);
     }
 
+    if ($request->hasFile('foto')) {
+        $path = $request->file('foto')->store('usuarios', 'public'); // salva em storage/app/public/usuarios
+
+        $usuario->update([
+            'foto' => $path,
+        ]);
+
+        return response()->json(['sucesso' => 'Foto enviada com sucesso!', 'path' => $path]);
+    }
+    return response()->json(['erro' => 'Nenhum arquivo enviado'], 400);
+}
 
     function desativarConta(Request $request)
     {
